@@ -38,13 +38,11 @@ function fiveHeads() {
             } else {
                 headsCount = 0;
             }
+
+            if(attempts === 100) reject(`5 consecutive "heads" were not reached`);
         }
         //cuantas veces se tomo para que de heads
-        if(headsCount === 5) {
-            resolve(`It took ${attempts} tries to flip five "heads"`);
-        } else {
-            reject(`5 consecutive "heads" were not reached`);
-        }
+        resolve(`It took ${attempts} tries to flip five "heads"`);
         
     });
 }
